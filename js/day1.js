@@ -9,6 +9,12 @@ export function runday1() {
         })
         .then(data => {
             var rawData = data.split("\r\n"); 
+
+            // temp fix for line feed breaks on gh-pages
+            if (rawData.length === 1) {
+                rawData = rawData[0].split("\n");
+            }
+
             console.log(rawData);
             input.textContent = rawData;
 

@@ -6,3 +6,7 @@ html, body {
     background-color: lightgrey;
     word-break: break-all;
 }
+
+i {
+    font-style: inherit;
+}

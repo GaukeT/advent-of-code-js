@@ -1,5 +1,6 @@
-import { runday as day1 } from './day1.js';
-import { runday as day2 }  from './day2.js'
+// import implementations of days
+import * as day1 from './day1.js';
+import * as day2 from './day2.js'
 
 // answer fields + show input
 var input = document.querySelector(".input");
@@ -17,7 +18,7 @@ createOptions();
 run.addEventListener("click", () => {
     resetFields();
     var run = methods[days.value];
-    eval(run)(run);
+    runday(run);
 });
 
 function resetFields() {
@@ -36,9 +37,38 @@ function createOptions() {
     }
 
     for (let i = 1; i <= totalDays; i++) {
-        days.options[days.options.length] = new Option(totalDays, totalDays); 
-        methods[totalDays] = 'day' + totalDays ;   
+        days.options[days.options.length] = new Option(i, i); 
+        methods[i] = 'day' + i ;   
     }
+}
 
-    console.log(methods);
+function runday(day) {
+    fetch("./input/" + day + ".txt") 
+        .then(response => {
+            return response.text();
+        })
+        .then(rawData => { 
+            // format raw data from input file
+            return eval(day + '.formatRawData')(rawData);
+        })
+        .then(data => {
+            // show user formatted data
+            input.textContent = data;
+            console.log('input:', data);
+            return data;
+        })
+        .then(data => {
+            // solve part 1
+            answer1.textContent += eval(day + '.solve1')(data);
+            console.log(answer1.textContent); 
+            return data;
+        })
+        .then(data => {
+            // solve part 2
+            answer2.textContent += eval(day + '.solve2')(data);
+            console.log(answer2.textContent); 
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }

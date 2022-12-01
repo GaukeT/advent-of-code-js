@@ -14,12 +14,18 @@ var days = document.querySelector(".days");
 // advent days
 var methods = {}
 createOptions();
-
 run.addEventListener("click", () => {
+    onSearch(true);
+
     resetFields();
     var run = methods[days.value];
     runday(run);
 });
+
+function onSearch(isRunning) {
+    run.disabled = isRunning;
+    days.disabled = isRunning;
+}
 
 function resetFields() {
     input.textContent = '';
@@ -68,6 +74,7 @@ function runday(day) {
             answer2.textContent += eval(day + '.solve2')(data);
             console.log(answer2.textContent); 
         })
+        .finally(() => onSearch(false))
         .catch(err => {
             console.log(err);
         });

@@ -1,0 +1,8 @@
+html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.input {
+    background-color: lightgrey;
+    word-break: break-all;
+}

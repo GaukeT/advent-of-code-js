@@ -1,5 +1,5 @@
-import { runday1 } from './day1.js';
-import { runday2 }  from './day2.js'
+import { runday as day1 } from './day1.js';
+import { runday as day2 }  from './day2.js'
 
 // answer fields + show input
 var input = document.querySelector(".input");
@@ -15,11 +15,12 @@ var methods = {}
 createOptions();
 
 run.addEventListener("click", () => {
-    reset();
-    eval(methods[days.value])();
+    resetFields();
+    var run = methods[days.value];
+    eval(run)(run);
 });
 
-function reset() {
+function resetFields() {
     input.textContent = '';
     answer1.textContent = 'part 1: ';
     answer2.textContent = 'part 2: ';
@@ -36,7 +37,7 @@ function createOptions() {
 
     for (let i = 1; i <= totalDays; i++) {
         days.options[days.options.length] = new Option(totalDays, totalDays); 
-        methods[totalDays] = 'runday' + totalDays ;   
+        methods[totalDays] = 'day' + totalDays ;   
     }
 
     console.log(methods);

@@ -1,3 +1,4 @@
+
 // format raw data from input file
 export function formatRawData(rawData) {
     return rawData;

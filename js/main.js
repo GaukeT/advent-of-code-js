@@ -6,6 +6,7 @@ import * as day2 from './day2.js'
 var input = document.querySelector(".input");
 var answer1 = document.querySelector(".answer1");
 var answer2 = document.querySelector(".answer2");
+var impl = document.querySelector(".impl");
 
 // day selector + go button
 var run = document.querySelector(".start");
@@ -16,10 +17,14 @@ var methods = {}
 createOptions();
 run.addEventListener("click", () => {
     onSearch(true);
-
-    resetFields();
     var run = methods[days.value];
     runday(run);
+});
+
+days.addEventListener("change", () => {
+    console.log(impl);
+    resetFields();
+    showImpl(days.value);
 });
 
 function onSearch(isRunning) {
@@ -29,8 +34,8 @@ function onSearch(isRunning) {
 
 function resetFields() {
     input.textContent = '';
-    answer1.textContent = 'part 1: ';
-    answer2.textContent = 'part 2: ';
+    answer1.textContent = '-';
+    answer2.textContent = '-';
 }
 
 function createOptions() {
@@ -46,6 +51,10 @@ function createOptions() {
         var defaultSelect = d.getDate() === i;
         days.options[days.options.length] = new Option(i, i, defaultSelect, defaultSelect); 
         methods[i] = 'day' + i ;   
+
+        if (defaultSelect) {
+            showImpl(i);
+        }
     }
 }
 
@@ -66,16 +75,29 @@ function runday(day) {
         })
         .then(data => {
             // solve part 1
-            answer1.textContent += eval(day + '.solve1')(data);
-            console.log(answer1.textContent); 
+            answer1.textContent = eval(day + '.solve1')(data);
+            console.log('answer1:', answer1.textContent); 
             return data;
         })
         .then(data => {
             // solve part 2
-            answer2.textContent += eval(day + '.solve2')(data);
-            console.log(answer2.textContent); 
+            answer2.textContent = eval(day + '.solve2')(data);
+            console.log('answer2:', answer2.textContent); 
         })
         .finally(() => onSearch(false))
+        .catch(err => {
+            console.log(err);
+        });
+}
+
+function showImpl(day) {
+    fetch("./js/day" + day + ".js") 
+        .then(response => {
+            return response.text();
+        })
+        .then(text => { 
+            impl.textContent = text;
+        })
         .catch(err => {
             console.log(err);
         });

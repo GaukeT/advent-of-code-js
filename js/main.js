@@ -43,7 +43,8 @@ function createOptions() {
     }
 
     for (let i = 1; i <= totalDays; i++) {
-        days.options[days.options.length] = new Option(i, i); 
+        var defaultSelect = d.getDate() === i;
+        days.options[days.options.length] = new Option(i, i, defaultSelect, defaultSelect); 
         methods[i] = 'day' + i ;   
     }
 }

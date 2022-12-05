@@ -5,6 +5,8 @@ import * as day3 from './day3.js'
 import * as day4 from './day4.js'
 import * as day5 from './day5.js'
 import * as day6 from './day6.js'
+
+// veryfied answers bij aoc
 import { answers } from './extra.js';
 
 // answer fields + show input
@@ -15,6 +17,7 @@ var impl = document.querySelector(".impl");
 
 // day selector + go button
 var run = document.querySelector(".start");
+var gh = document.querySelector(".gh");
 var days = document.querySelector(".days");
 
 // advent days
@@ -108,6 +111,9 @@ function showImpl(day) {
         })
         .then(text => { 
             impl.textContent = text;
+        })
+        .then(() =>{
+            gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/js/day" + day + ".js"
         })
         .catch(err => {
             console.log(err);

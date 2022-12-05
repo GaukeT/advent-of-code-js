@@ -68,7 +68,13 @@ samp {
     font-size: large;
 }
 
-.start {
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.code-card, a {
+    color: black;
     align-self: flex-end;
 }
 

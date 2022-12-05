@@ -73,6 +73,10 @@ samp {
     justify-content: space-between;
 }
 
+a {
+    margin-right: 8px;
+}
+
 .code-card, a {
     color: black;
     align-self: flex-end;

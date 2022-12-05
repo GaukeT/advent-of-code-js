@@ -18,6 +18,7 @@ var impl = document.querySelector(".impl");
 // day selector + go button
 var run = document.querySelector(".start");
 var gh = document.querySelector(".gh");
+var aoc = document.querySelector(".aoc");
 var days = document.querySelector(".days");
 
 // advent days
@@ -113,7 +114,8 @@ function showImpl(day) {
             impl.textContent = text;
         })
         .then(() =>{
-            gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/js/day" + day + ".js"
+            gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/js/day" + day + ".js";
+            aoc.href = "https://adventofcode.com/2022/day/" + day;
         })
         .catch(err => {
             console.log(err);

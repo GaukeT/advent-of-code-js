@@ -33,11 +33,26 @@ export function solve1(input) {
 
 // part 2
 export function solve2(input) {
-    var result = 0;
+    var result = 0;    
+
+    for (let i = 0; i < input.length; i++) {
+        const sectionPair = input[i];
+
+        const first = [Number(sectionPair[0]), Number(sectionPair[1])];
+        const second = [Number(sectionPair[2]), Number(sectionPair[3])];
+
+        if (!doSectionsOverlap2(second, first)) {
+            result++;
+        }
+    }
 
     return result;
 }    
 
 function doSectionsOverlap(first, second) {
     return (first[0] <= second[0] && first[1] >= second[1]);
+}
+
+function doSectionsOverlap2(first, second) {
+    return first[1] < second[0] || second[1] < first[0];
 }

@@ -1,9 +1,10 @@
 
 // format raw data from input file
 export function formatRawData(rawData) {
+    rawData = rawData.replaceAll("-", ",");
     var splitted = rawData.split("\n");
-    var formatted = [];
 
+    var formatted = [];
     for (let i = 0; i < splitted.length; i++) {
         formatted[i] = splitted[i].split(",");
     }
@@ -17,15 +18,13 @@ export function solve1(input) {
 
     for (let i = 0; i < input.length; i++) {
         const sectionPair = input[i];
-        
-        const first = sectionPair[0].split("-");
-        const second = sectionPair[1].split("-");
-        
+
+        const first = [Number(sectionPair[0]), Number(sectionPair[1])];
+        const second = [Number(sectionPair[2]), Number(sectionPair[3])];
+
         if (doSectionsOverlap(first, second) 
             || doSectionsOverlap(second, first)) {
             result++;
-
-            console.log(result, first, second);
         }
     }
 
@@ -40,5 +39,5 @@ export function solve2(input) {
 }    
 
 function doSectionsOverlap(first, second) {
-    return (first[0] <= second[0] && first[1] >= second[1])
+    return (first[0] <= second[0] && first[1] >= second[1]);
 }

@@ -4,6 +4,11 @@ html, body {
     background-color: #1a4341;
 }
 
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
 .input {
     background-color: lightgrey;
     word-break: break-all;
@@ -13,6 +18,7 @@ html, body {
     overflow: auto;
     padding: 25px;
     color: black;
+    width: 670px;
 }
 
 .input:empty {
@@ -64,4 +70,19 @@ samp {
 
 .start {
     align-self: flex-end;
+}
+
+@media screen and (min-device-width: 0px)
+    and (max-device-width: 900px) {
+  .card-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+  }
+  .code-card {
+    min-width: 360px !important;
+  }
+  .input {
+    width: 310px;
+  }
 }

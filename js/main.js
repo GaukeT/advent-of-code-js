@@ -1,6 +1,10 @@
 // import implementations of days
 import * as day1 from './day1.js';
 import * as day2 from './day2.js'
+import * as day3 from './day3.js'
+import * as day4 from './day4.js'
+import * as day5 from './day5.js'
+import * as day6 from './day6.js'
 
 // answer fields + show input
 var input = document.querySelector(".input");

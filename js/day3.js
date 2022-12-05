@@ -27,7 +27,7 @@ export function solve1(input) {
             }
         }
 
-        result += compareCompartments(firstComp, secondComp);
+        result += compareGroup(firstComp, secondComp);
     });
 
     return result;
@@ -68,27 +68,18 @@ export function solve2(input) {
     return result;
 }    
 
-function compareGroup(first, second, third) {
+function compareGroup(first, second, third = []) {
     var items = 0;
+    var includeThird = third.length > 0;
     for (let i = 0; i < first.length; i++) {
         // appears in all backpacks
-        if (first[i] > 0 && second[i] > 0 && third[i] > 0) {
-            items += i;
+        if (first[i] > 0 && second[i] > 0) {
+            if (!includeThird || (includeThird && third[i] > 0)) {
+                items += i;
+            }
         }
     }
     return items;  
-}
-
-function compareCompartments(first, second) {
-    var items = 0;
-    for (let i = 0; i < first.length; i++) {
-        // appears in both compartments
-        if (first[i] > 0 && second[i] > 0) {
-            // console.log(i, first[i], second[i]);
-            items += i;
-        }
-    }
-    return items;
 }
 
 function characterToIndex(product) {

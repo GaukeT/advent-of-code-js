@@ -96,8 +96,6 @@ button, select {
     cursor: pointer;
 }
 
-
-
 @media screen and (min-device-width: 0px)
     and (max-device-width: 900px) {
   .card-section {

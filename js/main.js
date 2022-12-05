@@ -79,7 +79,7 @@ function runday(day) {
         .then(data => {
             // show user formatted data
             input.textContent = data;
-            console.log('input:', data);
+            console.log('input:\n', data);
             return data;
         })
         .then(data => {

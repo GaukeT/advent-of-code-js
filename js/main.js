@@ -5,6 +5,7 @@ import * as day3 from './day3.js'
 import * as day4 from './day4.js'
 import * as day5 from './day5.js'
 import * as day6 from './day6.js'
+import { answers } from './extra.js';
 
 // answer fields + show input
 var input = document.querySelector(".input");
@@ -88,7 +89,13 @@ function runday(day) {
             answer2.textContent = eval(day + '.solve2')(data);
             console.log('answer2:', answer2.textContent); 
         })
-        .finally(() => onSearch(false))
+        .finally(() => {
+            onSearch(false)
+        
+            const validated = answers[day];
+            answer1.textContent += Number(answer1.textContent) === validated[0] ? " ✔" : "";
+            answer2.textContent += Number(answer2.textContent) === validated[1] ? " ✔" : "";
+        })
         .catch(err => {
             console.log(err);
         });

@@ -85,4 +85,7 @@ samp {
   .input {
     width: 310px;
   }
+  h1 {
+    font-size: large;
+  }
 }

@@ -100,5 +100,6 @@ function showImpl(day) {
         })
         .catch(err => {
             console.log(err);
+            impl.textContent = '';
         });
 }

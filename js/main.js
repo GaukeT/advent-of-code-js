@@ -58,7 +58,7 @@ run.addEventListener("click", () => {
 
 days.addEventListener("change", () => {
     resetFields();
-    showImpl("../day" + days.value);
+    showImpl("./day" + days.value);
 });
 
 function onSearch(isRunning) {

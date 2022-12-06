@@ -41,15 +41,6 @@ body {
     gap: 12px;
 }
 
-.days {
-    align-self: flex-end;
-}
-
-.day-selector {
-    display: flex;
-    justify-content: space-between;
-}
-
 .card {
     display: flex;
     flex-direction: column;
@@ -75,6 +66,7 @@ select {
 samp {
     padding-left: 25px;
     font-size: large;
+    margin-bottom: 22px;
 }
 
 .actions {

@@ -47,7 +47,7 @@ var methods = {}
 createOptions();
 
 window.addEventListener('load', function () {
-    showImpl(Object.keys(methods).length);
+    showImpl("./advent-of-code-js/day" + Object.keys(methods).length);
 });
 
 run.addEventListener("click", () => {
@@ -58,7 +58,7 @@ run.addEventListener("click", () => {
 
 days.addEventListener("change", () => {
     resetFields();
-    showImpl(days.value);
+    showImpl("../day" + days.value);
 });
 
 function onSearch(isRunning) {
@@ -127,7 +127,7 @@ function runday(day) {
 }
 
 function showImpl(day) {
-    fetch("../day" + day + "/run.js") 
+    fetch(day + "/run.js") 
         .then(response => {
             return response.text();
         })

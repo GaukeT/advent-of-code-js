@@ -133,7 +133,7 @@ function showImpl(day) {
             return response.text();
         })
         .then(text => { 
-            impl.textContent = text;
+            impl.innerHTML = Prism.highlight(text, Prism.languages.javascript, 'javascript');
         })
         .then(() =>{
             gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/day" + day + "/run.js";

@@ -94,17 +94,17 @@ button, select {
     cursor: pointer;
 }
 
-@media screen and (min-device-width: 0px)
-    and (max-device-width: 900px) {
+@media screen and (min-width: 0px)
+    and (max-width: 900px) {
   .content {
-    width: 400px;
+    width: 380px;
   }
   .card-section {
     display: flex;
     flex-direction: column;
   }
   .code-card {
-    min-width: 360px !important;
+    min-width: 340px !important;
   }
   h1 {
     font-size: large;

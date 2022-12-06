@@ -9,7 +9,7 @@ export function solve1(input) {
     var result = 0;
 
     input.forEach(game => {
-        result += possibilities[game];
+        result += assumeShape[game];
     });
 
     return result;
@@ -20,7 +20,7 @@ export function solve2(input) {
     var result = 0;
 
     input.forEach(game => {
-        result += possibilities2[game];
+        result += outcomeIndication[game];
     });
 
     return result;
@@ -33,7 +33,7 @@ export function solve2(input) {
 // X (Rock)     
 // Y (Paper)    
 // Z (Scissors) 
-var possibilities = {
+var assumeShape = {
     "A X": 4,
     "A Y": 8,
     "A Z": 3,
@@ -48,7 +48,7 @@ var possibilities = {
 // X (Lose) + 0
 // Y (Draw) + 3
 // Z (Win)  + 6
-var possibilities2 = {
+var outcomeIndication = {
     "A X": 3,
     "A Y": 4,
     "A Z": 8,

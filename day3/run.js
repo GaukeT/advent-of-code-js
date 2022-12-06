@@ -60,7 +60,7 @@ export function solve2(input) {
             } else if (counter === 2) {
                 second = temp;
             } else {
-                console.error("should not happen")
+                console.error("should not happen");
             }
         }
     });

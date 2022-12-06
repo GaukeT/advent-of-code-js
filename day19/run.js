@@ -6,7 +6,7 @@ export function formatRawData(rawData) {
 
 // part 1
 export function solve1(input) {
-    var result = 0;    
+    var result = 0;
 
     return result;
 }

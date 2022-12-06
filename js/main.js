@@ -83,17 +83,17 @@ function createOptions() {
 
     for (let i = 1; i <= totalDays; i++) {
         var defaultSelect = totalDays === i;
-        days.options[days.options.length] = new Option(i, i, defaultSelect, defaultSelect); 
-        methods[i] = 'day' + i ;
+        days.options[days.options.length] = new Option(i, i, defaultSelect, defaultSelect);
+        methods[i] = 'day' + i;
     }
 }
 
 function runday(day) {
-    fetch("./" + day + "/input.txt") 
+    fetch("./" + day + "/input.txt")
         .then(response => {
             return response.text();
         })
-        .then(rawData => { 
+        .then(rawData => {
             rawData = rawData.replaceAll("\r", "");
             // format raw data from input file
             return eval(day + '.formatRawData')(rawData);
@@ -107,17 +107,17 @@ function runday(day) {
         .then(data => {
             // solve part 1
             answer1.textContent = eval(day + '.solve1')(data);
-            console.log('answer1:', answer1.textContent); 
+            console.log('answer1:', answer1.textContent);
             return data;
         })
         .then(data => {
             // solve part 2
             answer2.textContent = eval(day + '.solve2')(data);
-            console.log('answer2:', answer2.textContent); 
+            console.log('answer2:', answer2.textContent);
         })
         .finally(() => {
             onSearch(false)
-        
+
             const validated = answers[day];
             answer1.textContent += answer1.textContent === String(validated[0]) ? " ✔" : "";
             answer2.textContent += answer2.textContent === String(validated[1]) ? " ✔" : "";
@@ -128,14 +128,14 @@ function runday(day) {
 }
 
 function showImpl(day) {
-    fetch("./day" + day + "/run.js") 
+    fetch("./day" + day + "/run.js")
         .then(response => {
             return response.text();
         })
-        .then(text => { 
+        .then(text => {
             impl.innerHTML = Prism.highlight(text, Prism.languages.javascript, 'javascript');
         })
-        .then(() =>{
+        .then(() => {
             gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/day" + day + "/run.js";
             aoc.href = "https://adventofcode.com/2022/day/" + day;
         })

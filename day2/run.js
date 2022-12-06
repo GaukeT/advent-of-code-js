@@ -6,7 +6,7 @@ export function formatRawData(rawData) {
 
 // part 1
 export function solve1(input) {
-    var result = 0;    
+    var result = 0;
 
     input.forEach(game => {
         result += possibilities[game];
@@ -17,14 +17,14 @@ export function solve1(input) {
 
 // part 2
 export function solve2(input) {
-    var result = 0;    
+    var result = 0;
 
     input.forEach(game => {
         result += possibilities2[game];
     });
 
     return result;
-}    
+}
 
 // A (Rock)     + 1   
 // B (Paper)    + 2

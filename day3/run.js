@@ -6,7 +6,7 @@ export function formatRawData(rawData) {
 
 // part 1
 export function solve1(input) {
-    var result = 0;    
+    var result = 0;
 
     input.forEach(backpack => {
         var length = backpack.length;
@@ -53,7 +53,7 @@ export function solve2(input) {
         counter++;
         if (counter === 3) {
             result += compareGroup(first, second, temp);
-            counter = 0; 
+            counter = 0;
         } else {
             if (counter === 1) {
                 first = temp;
@@ -66,7 +66,7 @@ export function solve2(input) {
     });
 
     return result;
-}    
+}
 
 function compareGroup(first, second, third = []) {
     var items = 0;
@@ -79,7 +79,7 @@ function compareGroup(first, second, third = []) {
             }
         }
     }
-    return items;  
+    return items;
 }
 
 function characterToIndex(product) {

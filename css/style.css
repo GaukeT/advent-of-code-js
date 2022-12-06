@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     background-color: #1a4341;
@@ -27,7 +28,11 @@ html, body {
 }
 
 i {
-    font-style: inherit;
+    margin: 4px 4px;
+}
+
+a {
+    color: #1a4341;
 }
 
 body {
@@ -53,11 +58,18 @@ body {
 }
 
 .code-card {
+    display: flex;
+    gap: 8px;
     min-width: 500px !important;
     padding-left: 20px !important;
-
     height: 500px;
     overflow: auto;
+}
+
+pre {
+    margin: 0px;
+    overflow: auto;
+    border-top: 1px solid #1a434181;
 }
 
 select {
@@ -75,12 +87,8 @@ samp {
     justify-content: space-between;
 }
 
-a {
-    margin-right: 8px;
-    color: #1a4341;
-}
-
-button, select {
+button,
+select {
     background-color: #1a4341;
     border: none;
     border-radius: 5px;
@@ -94,19 +102,55 @@ button, select {
     cursor: pointer;
 }
 
-@media screen and (min-width: 0px)
-    and (max-width: 900px) {
-  .content {
-    width: 380px;
-  }
-  .card-section {
-    display: flex;
-    flex-direction: column;
-  }
-  .code-card {
-    min-width: 340px !important;
-  }
-  h1 {
-    font-size: large;
-  }
+@media screen and (min-width: 0px) and (max-width: 750px) {
+    .content {
+        width: 340px;
+    }
+
+    .card-section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .code-card {
+        min-width: 300px !important;
+    }
+
+    h1 {
+        font-size: large;
+    }
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px darkgrey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: darkgrey;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: slategrey;
+}
+
+body::-webkit-scrollbar {
+    width: 1em;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+    border-radius: 50%;
 }

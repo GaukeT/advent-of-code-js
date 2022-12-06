@@ -6,7 +6,7 @@ export function formatRawData(rawData) {
 
 // part 1
 export function solve1(input) {
-    var result = 0;    
+    var result = 0;
     var elfCounts = countCalories(input);
 
     result = elfCounts[elfCounts.length - 1];
@@ -18,7 +18,7 @@ export function solve1(input) {
 export function solve2(input) {
     var result = 0;
     var elfCounts = countCalories(input);
-    
+
     for (let i = elfCounts.length - 3; i < elfCounts.length; i++) {
         result += elfCounts[i]
     }
@@ -31,7 +31,7 @@ function countCalories(input) {
     var count = 0;
     input.forEach(line => {
         if (line === '') {
-            elfCounts.push(count);  
+            elfCounts.push(count);
             count = 0;
         } else {
             count += Number(line);

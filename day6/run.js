@@ -14,13 +14,13 @@ export function solve1(input) {
 export function solve2(input) {
     var copy = JSON.parse(JSON.stringify(input));
     return findStartOfPacket(copy, 14);
-}    
+}
 
 function findStartOfPacket(datastream, uniqueVals) {
     var sop = datastream.splice(0, uniqueVals - 1);
     for (let i = 0; i < datastream.length; i++) {
         const character = datastream[i];
-        
+
         var doesExist = sop.includes(character);
         sop.push(character);
 

@@ -11,7 +11,7 @@ export function formatRawData(rawData) {
 // part 1
 export function solve1(input) {
     var workingStack = JSON.parse(JSON.stringify(stacks));
-    
+
     input.forEach(cmd => {
         var splitted = cmd.split(" ");
         var count = Number(splitted[1]);
@@ -30,7 +30,7 @@ export function solve1(input) {
 // part 2
 export function solve2(input) {
     var workingStack = JSON.parse(JSON.stringify(stacks));
-    
+
     input.forEach(cmd => {
         var splitted = cmd.split(" ");
         var count = Number(splitted[1]);
@@ -42,7 +42,7 @@ export function solve2(input) {
     });
 
     return calculateResult(workingStack);
-}    
+}
 
 function calculateResult(stacks) {
     var result = '';
@@ -53,7 +53,7 @@ function calculateResult(stacks) {
     return result;
 }
 
-const stacks  = [
+const stacks = [
     ["B", "G", "S", "C"],                       // 1
     ["T", "M", "W", "H", "J", "N", "V", "G"],   // 2
     ["M", "Q", "S"],                            // 3
@@ -80,7 +80,7 @@ const testStack = [
     [],
     ["Z", "N"],
     ["M", "C", "D"],
-    ["P"]    
+    ["P"]
 ]
 /*
     [D]    

@@ -37,13 +37,8 @@ export function solve2(input) {
         var from = Number(splitted[3]) - 1;
         var to = Number(splitted[5]) - 1;
 
-        var len = workingStack[from].length - count; 
-        var crates = workingStack[from].slice(len);
+        var crates = workingStack[from].splice(-count);
         workingStack[to].push(...crates);
-
-        for (let i = 0; i < count; i++) {
-            workingStack[from].pop();
-        }
     });
 
     return calculateResult(workingStack);

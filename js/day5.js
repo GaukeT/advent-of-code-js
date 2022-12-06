@@ -10,7 +10,6 @@ export function formatRawData(rawData) {
 
 // part 1
 export function solve1(input) {
-    var result = '';    
     var workingStack = JSON.parse(JSON.stringify(stacks));
     
     input.forEach(cmd => {
@@ -25,13 +24,7 @@ export function solve1(input) {
         }
     });
 
-    for (let i = 0; i < workingStack.length; i++) {
-        const stack = workingStack[i];
-        result += stack.pop();
-    }
-        
-
-    return result;
+    return calculateResult(workingStack);
 }
 
 // part 2
@@ -40,6 +33,15 @@ export function solve2(input) {
 
     return result;
 }    
+
+function calculateResult(stacks) {
+    var result = '';
+    for (let i = 0; i < stacks.length; i++) {
+        const stack = stacks[i];
+        result += stack.pop();
+    }
+    return result;
+}
 
 const stacks  = [
     ["B", "G", "S", "C"],                       // 1

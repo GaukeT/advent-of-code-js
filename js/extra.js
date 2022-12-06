@@ -4,7 +4,7 @@ export const answers = {
     "day3": [7581, 2525],
     "day4": [538, 792],
     "day5": ['CFFHVVHNC', 'FSZWBPTBG'],
-    "day6": [-1, -1],
+    "day6": [1651, 3837],
     "day7": [-1, -1],
     "day8": [-1, -1],
     "day9": [-1, -1],

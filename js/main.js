@@ -47,7 +47,7 @@ var methods = {}
 createOptions();
 
 window.addEventListener('load', function () {
-    showImpl("./advent-of-code-js/day" + Object.keys(methods).length);
+    showImpl("./day" + Object.keys(methods).length);
 });
 
 run.addEventListener("click", () => {

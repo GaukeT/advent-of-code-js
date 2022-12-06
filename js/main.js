@@ -32,7 +32,7 @@ import { answers } from './extra.js';
 var input = document.querySelector(".input");
 var answer1 = document.querySelector(".answer1");
 var answer2 = document.querySelector(".answer2");
-var impl = document.querySelector(".impl");
+var impl = document.querySelector("#impl");
 
 // day selector + go button
 var run = document.querySelector(".start");
@@ -141,6 +141,6 @@ function showImpl(day) {
         })
         .catch(err => {
             console.log(err);
-            impl.textContent = '';
+            impl.innerHTML = '';
         });
 }

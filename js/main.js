@@ -45,6 +45,11 @@ var aoc = document.querySelector(".aoc");
 // advent days
 var methods = {}
 createOptions();
+
+window.addEventListener('load', function () {
+    showImpl(Object.keys(methods).length);
+});
+
 run.addEventListener("click", () => {
     onSearch(true);
     var run = methods[days.value];
@@ -77,13 +82,9 @@ function createOptions() {
     }
 
     for (let i = 1; i <= totalDays; i++) {
-        var defaultSelect =  d.getFullYear() === 2022 && d.getDate() === i;
+        var defaultSelect = totalDays === i;
         days.options[days.options.length] = new Option(i, i, defaultSelect, defaultSelect); 
-        methods[i] = 'day' + i ;   
-
-        if (defaultSelect) {
-            showImpl(i);
-        }
+        methods[i] = 'day' + i ;
     }
 }
 

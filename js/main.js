@@ -94,6 +94,7 @@ function runday(day) {
             return response.text();
         })
         .then(rawData => { 
+            rawData = rawData.replaceAll("\r", "");
             // format raw data from input file
             return eval(day + '.formatRawData')(rawData);
         })

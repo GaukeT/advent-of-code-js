@@ -31,7 +31,6 @@ run.addEventListener("click", () => {
 });
 
 days.addEventListener("change", () => {
-    console.log(impl);
     resetFields();
     showImpl(days.value);
 });
@@ -97,8 +96,8 @@ function runday(day) {
             onSearch(false)
         
             const validated = answers[day];
-            answer1.textContent += Number(answer1.textContent) === validated[0] ? " ✔" : "";
-            answer2.textContent += Number(answer2.textContent) === validated[1] ? " ✔" : "";
+            answer1.textContent += answer1.textContent === String(validated[0]) ? " ✔" : "";
+            answer2.textContent += answer2.textContent === String(validated[1]) ? " ✔" : "";
         })
         .catch(err => {
             console.log(err);

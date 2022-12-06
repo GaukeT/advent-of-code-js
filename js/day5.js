@@ -29,9 +29,24 @@ export function solve1(input) {
 
 // part 2
 export function solve2(input) {
-    var result = 0;
+    var workingStack = JSON.parse(JSON.stringify(stacks));
+    
+    input.forEach(cmd => {
+        var splitted = cmd.split(" ");
+        var count = Number(splitted[1]);
+        var from = Number(splitted[3]) - 1;
+        var to = Number(splitted[5]) - 1;
 
-    return result;
+        var len = workingStack[from].length - count; 
+        var crates = workingStack[from].slice(len);
+        workingStack[to].push(...crates);
+
+        for (let i = 0; i < count; i++) {
+            workingStack[from].pop();
+        }
+    });
+
+    return calculateResult(workingStack);
 }    
 
 function calculateResult(stacks) {

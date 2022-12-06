@@ -1,11 +1,30 @@
+var stacks = [[],[],[],[],[],[],[],[],[]];
 
 // format raw data from input file
 export function formatRawData(rawData) {
     var formatted = rawData.split("\n");
+    var stackInfo = formatted.splice(0, 10);
+    for (let i = stackInfo.length - 3; i >= 0; i--) {
+        const row = stackInfo[i];
+        // +4
+        addToStack(0, row.substring(1, 2));
+        addToStack(1, row.substring(5, 6));
+        addToStack(2, row.substring(9, 10));
+        addToStack(3, row.substring(13, 14));
+        addToStack(4, row.substring(17, 18));
+        addToStack(5, row.substring(21, 22));
+        addToStack(6, row.substring(25, 26));
+        addToStack(7, row.substring(29, 30));
+        addToStack(8, row.substring(33, 34));
+    }
 
-    // remove stacks part
-    // maybe add fancy create stack part here.
-    return formatted.splice(10);
+    return formatted;
+}
+
+function addToStack(i, value) {
+    if (value !== " ") {
+        stacks[i].push(value);
+    }
 }
 
 // part 1
@@ -52,39 +71,3 @@ function calculateResult(stacks) {
     }
     return result;
 }
-
-const stacks = [
-    ["B", "G", "S", "C"],                       // 1
-    ["T", "M", "W", "H", "J", "N", "V", "G"],   // 2
-    ["M", "Q", "S"],                            // 3
-    ["B", "S", "L", "T", "W", "N", "M"],        // 4
-    ["J", "Z", "F", "T", "V", "G", "W", "P"],   // 5    
-    ["C", "T", "B", "G", "Q", "H", "S"],        // 6
-    ["T", "J", "P", "B", "W"],                  // 7
-    ["G", "D", "C", "Z", "F", "T", "Q", "M"],   // 8
-    ["N", "S", "H", "B", "P", "F"]              // 9
-]
-/*
-    [G]         [P]         [M]    
-    [V]     [M] [W] [S]     [Q]    
-    [N]     [N] [G] [H]     [T] [F]
-    [J]     [W] [V] [Q] [W] [F] [P]
-[C] [H]     [T] [T] [G] [B] [Z] [B]
-[S] [W] [S] [L] [F] [B] [P] [C] [H]
-[G] [M] [Q] [S] [Z] [T] [J] [D] [S]
-[B] [T] [M] [B] [J] [C] [T] [G] [N]
- 1   2   3   4   5   6   7   8   9 
-*/
-
-const testStack = [
-    [],
-    ["Z", "N"],
-    ["M", "C", "D"],
-    ["P"]
-]
-/*
-    [D]    
-[N] [C]    
-[Z] [M] [P]
- 1   2   3 
-*/ 

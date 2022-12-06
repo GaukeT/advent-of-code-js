@@ -1,29 +1,29 @@
 // import implementations of days
-import * as day1 from './day1.js';
-import * as day2 from './day2.js';
-import * as day3 from './day3.js';
-import * as day4 from './day4.js';
-import * as day5 from './day5.js';
-import * as day6 from './day6.js';
-import * as day7 from './day7.js';
-import * as day8 from './day8.js';
-import * as day9 from './day9.js';
-import * as day10 from './day10.js';
-import * as day11 from './day11.js';
-import * as day12 from './day12.js';
-import * as day13 from './day13.js';
-import * as day14 from './day14.js';
-import * as day15 from './day15.js';
-import * as day16 from './day16.js';
-import * as day17 from './day17.js';
-import * as day18 from './day18.js';
-import * as day19 from './day19.js';
-import * as day20 from './day20.js';
-import * as day21 from './day21.js';
-import * as day22 from './day22.js';
-import * as day23 from './day23.js';
-import * as day24 from './day24.js';
-import * as day25 from './day25.js';
+import * as day1 from '../day1/run.js';
+import * as day2 from '../day2/run.js';
+import * as day3 from '../day3/run.js';
+import * as day4 from '../day4/run.js';
+import * as day5 from '../day5/run.js';
+import * as day6 from '../day6/run.js';
+import * as day7 from '../day7/run.js';
+import * as day8 from '../day8/run.js';
+import * as day9 from '../day9/run.js';
+import * as day10 from '../day10/run.js';
+import * as day11 from '../day11/run.js';
+import * as day12 from '../day12/run.js';
+import * as day13 from '../day13/run.js';
+import * as day14 from '../day14/run.js';
+import * as day15 from '../day15/run.js';
+import * as day16 from '../day16/run.js';
+import * as day17 from '../day17/run.js';
+import * as day18 from '../day18/run.js';
+import * as day19 from '../day19/run.js';
+import * as day20 from '../day20/run.js';
+import * as day21 from '../day21/run.js';
+import * as day22 from '../day22/run.js';
+import * as day23 from '../day23/run.js';
+import * as day24 from '../day24/run.js';
+import * as day25 from '../day25/run.js';
 
 // veryfied answers bij aoc
 import { answers } from './extra.js';
@@ -88,7 +88,7 @@ function createOptions() {
 }
 
 function runday(day) {
-    fetch("./input/" + day + ".txt") 
+    fetch("../" + day + "/input.txt") 
         .then(response => {
             return response.text();
         })
@@ -126,7 +126,7 @@ function runday(day) {
 }
 
 function showImpl(day) {
-    fetch("./js/day" + day + ".js") 
+    fetch("../day" + day + "/run.js") 
         .then(response => {
             return response.text();
         })
@@ -134,7 +134,7 @@ function showImpl(day) {
             impl.textContent = text;
         })
         .then(() =>{
-            gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/js/day" + day + ".js";
+            gh.href = "https://github.com/GaukeT/advent-of-code-js/blob/main/day" + day + "/run.js";
             aoc.href = "https://adventofcode.com/2022/day/" + day;
         })
         .catch(err => {

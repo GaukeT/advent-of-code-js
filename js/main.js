@@ -47,7 +47,7 @@ var methods = {}
 createOptions();
 
 window.addEventListener('load', function () {
-    showImpl("./day" + Object.keys(methods).length);
+    showImpl(Object.keys(methods).length);
 });
 
 run.addEventListener("click", () => {
@@ -58,7 +58,7 @@ run.addEventListener("click", () => {
 
 days.addEventListener("change", () => {
     resetFields();
-    showImpl("./day" + days.value);
+    showImpl(days.value);
 });
 
 function onSearch(isRunning) {
@@ -89,7 +89,7 @@ function createOptions() {
 }
 
 function runday(day) {
-    fetch("../" + day + "/input.txt") 
+    fetch("./" + day + "/input.txt") 
         .then(response => {
             return response.text();
         })
@@ -127,7 +127,7 @@ function runday(day) {
 }
 
 function showImpl(day) {
-    fetch(day + "/run.js") 
+    fetch("./day" + day + "/run.js") 
         .then(response => {
             return response.text();
         })

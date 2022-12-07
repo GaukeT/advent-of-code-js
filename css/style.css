@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 720px;
+    width: 900px;
     gap: 12px;
 }
 
@@ -21,6 +21,7 @@ body {
     overflow: auto;
     word-break: break-all;
     height: 250px;
+    margin-bottom: 25px;
 }
 
 .input:empty {
@@ -50,18 +51,20 @@ body {
 
 .card {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     color: black;
     padding: 13px;
     background: #f5f2f0;
     border-radius: 10px;
-    min-width: 150px;
+    min-width: 180px;
 }
 
 .code-card {
     display: flex;
+    flex-grow: 2;
     gap: 8px;
-    min-width: 500px !important;
+    /* min-width: 500px !important; */
     padding-left: 20px !important;
     height: 500px;
     overflow: auto;
@@ -103,9 +106,15 @@ select {
     cursor: pointer;
 }
 
+@media screen and (min-width: 0px) and (max-width: 920px) {
+    .content {
+        width: 650px;
+    }
+}
+
 @media screen and (min-width: 0px) and (max-width: 750px) {
     .content {
-        width: 340px;
+        width: 500px;
     }
 
     .card-section {
@@ -114,11 +123,21 @@ select {
     }
 
     .code-card {
-        min-width: 300px !important;
+        min-width: 470px !important;
     }
 
     h1 {
         font-size: large;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 520px) {
+    .content {
+        width: 340px;
+    }
+
+    .code-card {
+        min-width: 300px !important;
     }
 }
 

@@ -1,7 +1,7 @@
 
 // format raw data from input file
 export function formatRawData(rawData) {
-    return rawData;
+    return rawData.split("\n");
 }
 
 // part 1

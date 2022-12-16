@@ -29,7 +29,6 @@ function findStartOfPacket(datastream, uniqueVals) {
             var s = new Set(sop);
             if (s.size === uniqueVals) {
                 // found start of packet
-                console.log(character);
                 return i + 1 + uniqueVals - 1;
             }
         }

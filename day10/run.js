@@ -1,7 +1,13 @@
 
 // format raw data from input file
 export function formatRawData(rawData) {
-    return rawData;
+    var data = rawData.split("\n");
+
+    for (let i = 0; i < data.length; i++) {
+        data[i] = data[i].split(" ");
+    }
+
+    return data;
 }
 
 // part 1

@@ -76,13 +76,8 @@ function createOptions() {
     const d = new Date();
     var totalDays = 25;
 
-    // only less totalDays than 25 if before 25th of december 2022.
-    if (d.getFullYear() === 2022 && d.getDate() < 25) {
-        totalDays = d.getDate();
-    }
-
     for (let i = 1; i <= totalDays; i++) {
-        var defaultSelect = totalDays === i;
+        var defaultSelect = 1 === i;
         days.options[days.options.length] = new Option(i, i, defaultSelect, defaultSelect);
         methods[i] = 'day' + i;
     }

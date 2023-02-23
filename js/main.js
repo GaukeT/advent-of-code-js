@@ -47,7 +47,7 @@ var methods = {}
 createOptions();
 
 window.addEventListener('load', function () {
-    showImpl(Object.keys(methods).length);
+    showImpl(1);
 });
 
 run.addEventListener("click", () => {
